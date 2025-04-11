@@ -3,8 +3,7 @@ import sg from "@sendgrid/mail"
 
 sg.setApiKey(import.meta.env.SENDGRID_API_KEY as string)
 
-
-export const prerender = false;
+export const prerender = false
 
 export const POST: APIRoute = async ({ params, request }) => {
   try {
