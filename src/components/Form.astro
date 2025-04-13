@@ -25,7 +25,7 @@
       body: formData,
     });
 
-    if (!response.ok) throw new Error('Network response was not ok');
+    if (response.error) throw new Error('Network response was not ok');
 
       form.reset()
       btn.innerHTML = 'Enviado';

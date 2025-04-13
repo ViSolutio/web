@@ -27,18 +27,11 @@ export const POST: APIRoute = async ({ params, request }) => {
       `
     }
 
-    sg
-      .send(msg)
-      .then((response) => {
-        console.log(response[0].statusCode)
-        console.log(response[0].headers)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
+    const response = await sg.send(msg)
 
-    return new Response(JSON.stringify({ status: "ok" }))
+    return new Response(JSON.stringify({ response }))
   } catch (error) {
     console.error(error)
+    return new Response(JSON.stringify({ error: 'Error al enviar el mensaje' }))
   }
 };
