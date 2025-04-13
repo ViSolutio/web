@@ -3,6 +3,10 @@ dist/
 
 # generated types
 .astro/
+.netlify/
+
+# bun
+bun.lock
 
 # dependencies
 node_modules/

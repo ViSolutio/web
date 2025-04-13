@@ -2,14 +2,14 @@
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import vercel from '@astrojs/vercel'
+import netlify from '@astrojs/netlify'
 
 // https://astro.build/config
 export default defineConfig({
+  integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
-    integration: [react()]
   },
   output: 'server',
-  adapter: vercel()
+  adapter: netlify()
 });
